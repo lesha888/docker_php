@@ -24,6 +24,11 @@ RUN apt-get update && apt-get install -y \
 	&& rm -r /var/lib/apt/lists/*
 
 #RUN cd /usr/src/php/ext/ &&  git clone git://github.com/xdebug/xdebug.git && docker-php-ext-install xdebug
-#RUN  apt-get install gcc make autoconf libc-dev pkg-config zlib1g-dev libmemcached-dev && git clone https://github.com/php-memcached-dev/php-memcached && cd php-memcached && git checkout php7 && cd .. && docker-php-ext-install php-memcached 	
+RUN  apt-get install gcc make autoconf libc-dev pkg-config zlib1g-dev libmemcached-dev && git clone https://github.com/php-memcached-dev/php-memcached && cd php-memcached && git checkout php7 && cd .. && docker-php-ext-install php-memcached 	
+RUN  git clone https://github.com/php-memcached-dev/php-memcached && cd php-memcached && git checkout php7 && cd .. && docker-php-ext-install php-memcached 	
 
-	
+# wget 	https://pecl.php.net/get/mysqlnd_memcache-1.0.1.tgz
+# && tar -zxvf mysqlnd_memcache-1.0.1.tgz
+# && mv mysqlnd_memcache-1.0.1 mysqlnd_memcache
+# && cd mysqlnd_memcache
+# docker-php-ext-install mysqlnd_memcache
